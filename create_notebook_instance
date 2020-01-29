@@ -1,0 +1,23 @@
+import sagemaker
+import os
+import boto3
+import sagemaker
+from sagemaker.tuner import IntegerParameter, CategoricalParameter, ContinuousParameter, HyperparameterTuner
+client = boto3.client('sagemaker')
+response = client.create_notebook_instance(
+    NotebookInstanceName='test3',
+    InstanceType='ml.t2.medium',
+    SubnetId='string',
+    SecurityGroupIds=[
+        'string',
+    ],
+    RoleArn='',
+    LifecycleConfigName='string',
+    DirectInternetAccess='Enabled',
+    VolumeSizeInGB=5,
+    DefaultCodeRepository='string',
+    AdditionalCodeRepositories=[
+        'string',
+    ],
+    RootAccess='Enabled'
+)
